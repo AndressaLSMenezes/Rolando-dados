@@ -55,4 +55,3 @@ onde minhaBarra é a variável contendo o DOM element da div e larguraDaBarra é
 ## Envio
 
 Faça o push do código para o seu repositório GitHub e implemente-o GitHub pages. No Canvas, por favor, envie sua url do GitHub Pages: (ex: https://nomedeusuario.github.io/s_rolling-dice) e envie o link do seu repositório nos comentários. Após ser a correção, seu projeto deverá ficar privado.
-

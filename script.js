@@ -49,12 +49,11 @@ function rolarDados (frequencia) {
 
     ]
 
-    const body = document.querySelector('body')
 
     for(let i = 1; i <= frequencia; i++) {
 
-        let dadoUm   = Math.floor(Math.random() * (6 - 1)) + 1
-        let dadoDois = Math.floor(Math.random() * (6 - 1)) + 1
+        let dadoUm   = Math.floor(Math.random() * (7 - 1)) + 1
+        let dadoDois = Math.floor(Math.random() * (7 - 1)) + 1
         soma = dadoUm + dadoDois
 
         for(let j = 0; j < frequenciaDosNumero.length; j++) {
@@ -65,14 +64,25 @@ function rolarDados (frequencia) {
         } 
     }
 
+
     const ul = document.createElement('ul')
+    ul.style.listStyle = 'none'
+    const body = document.querySelector('body')
 
     for(let k = 0; k < frequenciaDosNumero.length; k++) {
-        const li = document.createElement('li')
-        const p = document.createElement('p')
+        const li  = document.createElement('li')
+        const p   = document.createElement('p')
+        const div = document.createElement('div')
+        let tamanho = frequenciaDosNumero[k].contador
         
         p.innerText = `${frequenciaDosNumero[k].nome}: ${frequenciaDosNumero[k].contador}`
         li.appendChild(p)
+
+        div.style.width = `${tamanho}px`;
+        div.style.height = '10px'
+        div.style.background = 'green'
+        div.classList = 'barrinhas'
+        li.appendChild(div)
 
         ul.appendChild(li)
     }
@@ -82,7 +92,11 @@ function rolarDados (frequencia) {
     return body
 }
 
+const button = document.getElementById("findButton");
+button.addEventListener("click", function () {
 
+    let typedText = document.getElementById("input").value;
+   
+    return rolarDados(typedText);
+});
 
-
-rolarDados (1000)
